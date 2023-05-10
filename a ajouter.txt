@@ -1,0 +1,30 @@
+AJOUT projet Dev Web
+
+  *bouton modifier
+  *bouton telechargement de la page
+  *bouton detail
+  *supprimer
+
+
+
+
+
+        A faire :
+                 #retroplanning 
+                 #maquettes
+                 #cahier des charge
+                 #backlog produit{ tableau a 2 colonnes}:col 1--->user stories
+                                                         col 2--->deadline
+
+
+                 userstories : line 1-----> en tant que X je dois pouvoir faire Y
+                          Faire xa pour toutes les fonctionnalites de l'app (enregistrement, connexion, liste la page,
+                                                                             modifier, telechargement de la page, afficher les detais,
+                                                                              supprimer.....)
+       
+                 deadline: deadline pour la creation de chaque fonctionnalite.
+                 #implementation de l'App
+
+
+
+    Realiser le bord d'avancement en utilisant Trello

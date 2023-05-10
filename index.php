@@ -13,14 +13,16 @@
 <body>
    
     <div class="body">
+        <h2 class="text-center text-white mt-3 text-bold">UFR-SDS Formulaire d'Inscription et de Connexion</h2>
+        <h4></h4>
         <div class="veen">
             <div class="login-btn splits">
                 <p>Vous avez un compte</p>
-                <button class="active">Connectez-vous</button>
+                <button>Connectez-vous</button>
             </div>
             <div class="rgstr-btn splits">
                 <p>Vous n'avez pas un compte</p>
-                <button>Inscrivez-vous</button>
+                <button class="active">Inscrivez-vous</button>
             </div>
             <div class="wrapper">
                 <form id="login" tabindex="500" method="GET" action="">
