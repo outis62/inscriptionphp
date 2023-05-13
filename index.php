@@ -67,67 +67,13 @@
     </div>
     <footer class="bg-light p-5">
         <?php
-    include ('footer.php');
+    include ('<page/footer.php');
     ?>
     </footer>
-    <?php
-	// Vérifie si le formulaire est soumis
-	if(isset($_POST['submit'])){
-		// Récupère les données du formulaire
-		$nom = $_POST['nom'];
-		$prenom = $_POST['prenom'];
-		$date_naissance = $_POST['date_naissance'];
-		$mdp = $_POST['mdp'];
-        $mdpcrypt = password_hash($mdp, PASSWORD_BCRYPT); 
-
-		include ('connexionbd.php');
-
-
-			// Prépare et exécute la requête SQL d'insertion
-			$sql = "INSERT INTO apprenant (nom, prenom, date_naissance, mdp) VALUES (:nom, :prenom, :date_naissance, :mdpcrypt)";
-			$stmt = $conn->prepare($sql);
-			$stmt->bindParam(':nom', $nom);
-			$stmt->bindParam(':prenom', $prenom);
-			$stmt->bindParam(':date_naissance', $date_naissance);
-			$stmt->bindParam(':mdpcrypt', $mdp);
-			$stmt->execute();
-
-			echo '<p style="color=black;">Les informations ont été enregistrées avec succès.</p>';
-			
-
-	}
-	?>
-
-    <!-- Connexion et redirection vers la liste des inscrits -->
-    <?php
-	// Connexion à la base de données
-    include('connexionbd.php');
-
-	// Vérification si le formulaire a été soumis
-	if (isset($_GET['submit'])) {
-		// Récupère les données du formulaire
-		$nom = $_GET['nom'];
-		$mdp = $_GET['mdp'];
-
-		$sql = "SELECT * FROM apprenant WHERE nom=:nom AND mdp=:mdp";
-		$requete = $conn->prepare($sql);
-        $requete->bindParam(':nom', $nom);
-        $requete->bindParam(':mdp', $mdp);
-        $requete->execute();
-		if ($requete->rowCount() == 1) {
-            // La requête a retourné une seule ligne de résultat
-            $resultat = $requete->fetch(PDO::FETCH_ASSOC);
-            echo '<p style="color:black;">Connecté avec succès !</p>';
-            header('Location: inscrit.php');
-            exit();
-        } else {
-			// Si les informations de connexion sont incorrectes, afficher un message d'erreur
-			echo '<p style="color:red;">Nom ou mot de passe incorrect</p>';
-		}
-	}
-?>
-
-
+   <?php
+  include('page/enregistrement.php');
+  include('page/authentification.php');
+   ?>
     
      <script  src="script/jquery.3.1.1.min.js"></script>
      <script src="script/register.js"></script>
