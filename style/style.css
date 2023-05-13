@@ -1,3 +1,184 @@
-body{
-    background-image: url(simplon.jpg);
-}
+/* CSS bouton Supprimer */
+.box {
+    width: 140px;
+    height: auto;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+    box-shadow: 0px 14px 56px -11px #b3c2d9;
+  }
+  
+  .box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+  }
+  
+  .box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+  }
+  
+  .box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .box:hover:before {
+    border-color: red;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+  }
+  
+  .box:hover:after {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+  }
+  
+  .supp {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+  /* CSS bouton modifier */
+  .modifier {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3d405b;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 13px;
+    padding: 16px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   .modifier span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .modifier span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   .modifier:hover span {
+    padding-right: 15px;
+   }
+   
+   .modifier:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+  /* CSS bouton Details */
+  .detail {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 5px;
+  }
+  
+  .detail svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  .detail span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  .detail:hover svg {
+    transform: translateX(5px) rotate(90deg);
+  }
+  
+  .detail:hover span {
+    transform: translateX(7px);
+  }
+/* CSS bouton Download */
+.download {
+    /* display: inline-block; */
+    border-radius: 7px;
+    border: none;
+    background: #747e8b;
+    color: white;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    width: 10.1em;
+    padding: 1.5em;
+    transition: all 0.4s;
+    cursor: pointer;
+   }
+   
+   .download span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+   }
+   
+   .download span:after {
+    content: 'en PDF';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+   }
+   
+   .download:hover span {
+    padding-right: 3.55em;
+   }
+   
+   .download:hover span:after {
+    opacity: 4;
+    right: 0;
+   }

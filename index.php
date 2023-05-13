@@ -38,10 +38,10 @@
                     <div class="submit">
                     <input type="submit" name="submit" value="Se connecter">
                     </div>
-                    <img src="images/simplon.jpg" width="80" height="80" alt="">
+                    <img src="images/ufrsds.jpg" width="80" height="80" class="mt-2">
                 </form>
                 <form id="register" tabindex="502" method="POST">
-                    <h3>Inscription <img src="images/simplon.jpg" width="60" height="60" alt=""></h3>
+                    <h3>Inscription <img src="images/ufrsds.jpg" width="40" height="40" alt=""></h3>
                     <div class="name">
                         <input type="text" name="nom" required>
                         <label>Nom de famille</label>
@@ -65,6 +65,11 @@
             </div>
         </div>
     </div>
+    <footer class="bg-light p-5">
+        <?php
+    include ('footer.php');
+    ?>
+    </footer>
     <?php
 	// Vérifie si le formulaire est soumis
 	if(isset($_POST['submit'])){
@@ -73,17 +78,18 @@
 		$prenom = $_POST['prenom'];
 		$date_naissance = $_POST['date_naissance'];
 		$mdp = $_POST['mdp'];
+        $mdpcrypt = password_hash($mdp, PASSWORD_BCRYPT); 
 
 		include ('connexionbd.php');
 
 
 			// Prépare et exécute la requête SQL d'insertion
-			$sql = "INSERT INTO apprenant (nom, prenom, date_naissance, mdp) VALUES (:nom, :prenom, :date_naissance, :mdp)";
+			$sql = "INSERT INTO apprenant (nom, prenom, date_naissance, mdp) VALUES (:nom, :prenom, :date_naissance, :mdpcrypt)";
 			$stmt = $conn->prepare($sql);
 			$stmt->bindParam(':nom', $nom);
 			$stmt->bindParam(':prenom', $prenom);
 			$stmt->bindParam(':date_naissance', $date_naissance);
-			$stmt->bindParam(':mdp', $mdp);
+			$stmt->bindParam(':mdpcrypt', $mdp);
 			$stmt->execute();
 
 			echo '<p style="color=black;">Les informations ont été enregistrées avec succès.</p>';
