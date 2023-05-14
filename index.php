@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style/register.css">
+        <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/register.css">
     <title>Inscription Apprenant.e.s P04</title>
 </head>
 
@@ -39,6 +39,9 @@
                     <input type="submit" name="submit" value="Se connecter">
                     </div>
                     <img src="images/ufrsds.jpg" width="80" height="80" class="mt-2">
+                    <?php
+                      include('page/authentification.php');
+                    ?>
                 </form>
                 <form id="register" tabindex="502" method="POST">
                     <h3>Inscription <img src="images/ufrsds.jpg" width="40" height="40" alt=""></h3>
@@ -61,6 +64,9 @@
                     <div>
                     <input type="submit" name="submit" value="Enregistrer">
                     </div>
+                    <?php
+                      include('page/enregistrement.php');
+                    ?>
                 </form>
             </div>
         </div>
@@ -70,11 +76,8 @@
     include ('<page/footer.php');
     ?>
     </footer>
-   <?php
-  include('page/enregistrement.php');
-  include('page/authentification.php');
-   ?>
-    
+  
+
      <script  src="script/jquery.3.1.1.min.js"></script>
      <script src="script/register.js"></script>
  

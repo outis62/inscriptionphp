@@ -182,3 +182,7 @@
     opacity: 4;
     right: 0;
    }
+   .listemenu{
+    position: fixed;
+    bottom: 0;
+   }
