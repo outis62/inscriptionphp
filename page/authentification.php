@@ -22,13 +22,13 @@ if (isset($_GET['submit'])) {
 
         // Vérification si le mot de passe saisi correspond au mot de passe crypté
         if (password_verify($mdp, $mdpcrypt)) {
-            echo '<p style="color:black;">Connecté avec succès !</p>';
+            echo '<p style="color: black;">Connecté avec succès !</p>';
             header('Location: page/inscrit.php');
 			// echo '<a href="page/inscrit.php" target="_blank">Aller à la page Liste</a>';
             exit();
         } else {
             // Si les informations de connexion sont incorrectes, afficher un message d'erreur
-            echo '<p style="color:red;">mot de passe incorrect</p>';
+            echo '<p style="color: red;">mot de passe incorrect</p>';
         }
     } else {
         // Aucun enregistrement correspondant au nom d'utilisateur

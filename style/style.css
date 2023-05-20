@@ -61,7 +61,7 @@
   }
   
   .supp {
-    color: red;
+    color: white;
     text-decoration: none;
     cursor: pointer;
     outline: none;
@@ -182,7 +182,4 @@
     opacity: 4;
     right: 0;
    }
-   .listemenu{
-    position: fixed;
-    bottom: 0;
-   }
+   

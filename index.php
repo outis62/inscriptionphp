@@ -64,12 +64,12 @@
                     <div>
                     <input type="submit" name="submit" value="Enregistrer">
                     </div>
-                    <?php
-                      include('page/enregistrement.php');
-                    ?>
                 </form>
             </div>
         </div>
+        <?php
+         include('page/enregistrement.php');
+        ?>
     </div>
     <footer class="bg-light p-5">
         <?php
@@ -77,7 +77,6 @@
     ?>
     </footer>
   
-
      <script  src="script/jquery.3.1.1.min.js"></script>
      <script src="script/register.js"></script>
  
