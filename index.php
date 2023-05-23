@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Inscription Apprenant.e.s P04</title>
 </head>
 
@@ -58,8 +59,16 @@
                         <label>Date de naisance</label>
                     </div>
                     <div class="passwd">
-                        <input type="password" name="mdp" required>
+                        <!-- <input type="password" id="mdp" name="mdp" required>
+                        <i id="oeil" type="submit" class="fas fa-eye" onclick="afficherMotDePasse()"></i>
+                        <label>Mot de passe</label> -->
+
+                        <input type ="password" placeholder="Mot de passe" name="mdp">
                         <label>Mot de passe</label>
+                         <div class="password-icon">
+                           <!-- <i data-feather="eye"></i>
+                           <i data-feather="eye-off"></i> -->
+                         </div>
                     </div>
                     <div>
                     <input type="submit" name="submit" value="Enregistrer">
@@ -79,7 +88,10 @@
   
      <script  src="script/jquery.3.1.1.min.js"></script>
      <script src="script/register.js"></script>
- 
+     <script src="https://unpkg.com/feather-icons"> </script>
+<script>
+  feather.replace();
+</script>
 </body>
 
 </html>

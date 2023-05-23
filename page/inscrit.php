@@ -43,22 +43,24 @@ echo "<tr class='bg-secondary text-white'>
 <th scope='col'>Prenom</th>
 <th scope='col'>Date de naissance</th>
 <th scope='col'>Mot de passe</th>
-<th scope='col'>Actions</th>
+<th scope='col'></th>
+<th scope='col'></th>
 </tr>";
 
-$counter = 1;
+$numlist = 1;
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
-    echo "<td>" . $counter . "</td>";
+    echo "<td>" . $numlist . "</td>";
     echo "<td>" . htmlspecialchars($row['nom']) . "</td>";
     echo "<td>" . htmlspecialchars($row['prenom']) . "</td>";
     echo "<td>" . htmlspecialchars($row['date_naissance']) . "</td>";
     echo "<td>" . htmlspecialchars($row['mdp']) . "</td>";
-    echo "<td><a href='?id=" . $row['id'] . "' class='btn btn-danger' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer cet étudiant ?\")'>Supprimer</a></td>";
+    echo "<td><a href='?id=" . $row['id'] . "' class='btn btn-danger' onclick='return confirm(\"Voulez-vous vraiment supprimer cet apprenant ?\")'>Supprimer</a></td>";
+    echo "<td><a href='modifier.php?id=" . $row['id'] . "' class='btn btn-primary'>Modifier</a></td>";
     echo "</tr>";
     
-    $counter++; 
+    $numlist++; 
 }
 
 echo "</table>";
