@@ -8,7 +8,7 @@ $(document).ready(function(){
     });
     $(".veen .login-btn button").click(function(){
         $('.veen .wrapper').removeClass('move');
-        $('.body').css('background','#284B63');
+        $('.body').css('background','#118AB2');
         $(".veen .rgstr-btn button").removeClass('active');
         $(this).addClass('active');
     });

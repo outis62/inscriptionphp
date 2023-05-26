@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/register.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="style/fontawesome/css/all.css">
+        <link rel="stylesheet" href="">
     <title>Inscription Apprenant.e.s P04</title>
 </head>
 
 <body>
    
     <div class="body">
-        <h2 class="text-center text-white mt-3 text-bold">UFR-SDS Formulaire d'Inscription et de Connexion</h2>
+        <h2 class="text-center text-white mt-3 fw-bold">StudentHub</h2>
         <h4></h4>
         <div class="veen">
             <div class="login-btn splits">
@@ -88,7 +89,7 @@
   
      <script  src="script/jquery.3.1.1.min.js"></script>
      <script src="script/register.js"></script>
-     <script src="https://unpkg.com/feather-icons"> </script>
+     <script src=""> </script>
 <script>
   feather.replace();
 </script>
