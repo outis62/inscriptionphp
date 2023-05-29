@@ -20,7 +20,7 @@
 			$stmt->bindParam(':mdpcrypt', $mdpcrypt);
 			$stmt->execute();
 
-			echo '<p style="color: white; text-align: center; font-weight: bold;">Les informations ont été enregistrées avec succès.</p>';
+			echo '<p style="color: white; text-align: center; font-weight: bold; text-italic">Apprenant.e.s enregistré.e.s avec succès.</p>';
 			
 
 	}

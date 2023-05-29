@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/register.css">
-        <link rel="stylesheet" href="style/fontawesome/css/all.css">
-        <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style/bootstrap-5.2.3-dist/register.css">
+    <link rel="stylesheet" href="style/fontawesome/css/all.css">
+    <link rel="shortcut icon" href="images/ufrsds.jpg">
     <title>Inscription Apprenant.e.s P04</title>
 </head>
 
@@ -35,6 +35,9 @@
                     </div>
                     <div class="passwd">
                         <input type="password" name="mdp" id="mdp" required>
+                        <div class="password-icon">
+                            <img src="images/red_eye.svg" width="20" height="20"  alt="" id="oeil" onClick="changere()" style="cursor: pointer;" />
+                         </div>
                         <label>Mot de passe</label>
                     </div>
                     <div class="submit">
@@ -60,21 +63,47 @@
                         <label>Date de naisance</label>
                     </div>
                     <div class="passwd">
-                        <!-- <input type="password" id="mdp" name="mdp" required>
-                        <i id="oeil" type="submit" class="fas fa-eye" onclick="afficherMotDePasse()"></i>
-                        <label>Mot de passe</label> -->
-
-                        <input type ="password" placeholder="Mot de passe" name="mdp">
+                        <input type ="password" placeholder="Mot de passe" id="pass" name="mdp">
                         <label>Mot de passe</label>
                          <div class="password-icon">
-                           <!-- <i data-feather="eye"></i>
-                           <i data-feather="eye-off"></i> -->
+                            <img src="images/red_eye.svg" width="20" height="20"  alt="" id="eye" onClick="changer()" style="cursor: pointer;" />
                          </div>
                     </div>
                     <div>
                     <input type="submit" name="submit" value="Enregistrer">
                     </div>
                 </form>
+            <script>
+                // funtion pour l'oeil mdp enregistrement
+                 e = true;
+                function changer() {
+                if (e) {
+                document.getElementById("pass").setAttribute("type", "text");
+                document.getElementById("eye").src = "images/green_eye.svg";
+                e = false;
+                 }
+                else {
+                document.getElementById("pass").setAttribute("type", "password");
+                document.getElementById("eye").src = "images/red_eye.svg";
+                e = true;
+                 }
+                 }
+
+                //   function pour l'oeil mdp se connecter
+                    a=true;
+                    function changere(){
+                    if(a){
+                    document.getElementById("mdp").setAttribute("type","text");
+                    document.getElementById("oeil").src="images/green_eye.svg";
+                    a=false;
+                    }
+                    else{
+                    document.getElementById("mdp").setAttribute("type","password");
+                    document.getElementById("oeil").src="images/red_eye.svg";
+                    a=true; 
+                    }
+                    }
+            </script>
             </div>
         </div>
         <?php
@@ -83,16 +112,12 @@
     </div>
     <footer class="bg-light p-5">
         <?php
-    include ('<page/footer.php');
-    ?>
+          include ('<page/footer.php');
+        ?>
     </footer>
   
      <script  src="script/jquery.3.1.1.min.js"></script>
      <script src="script/register.js"></script>
-     <script src=""> </script>
-<script>
-  feather.replace();
-</script>
 </body>
 
 </html>
