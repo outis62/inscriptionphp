@@ -28,7 +28,7 @@
 
         <input type="password" id="mdp" placeholder="New mot de passe" name="mdp" required><br/><br/>
 
-        <button type="submit" name="submit" class="btnmodif"><i class="fa-solid fa-file-pen"></i>Modifier
+        <!-- <button type="submit" name="submit" class="btnmodif"><i class="fa-solid fa-file-pen"></i>Modifier
          <div id="clip">
            <div id="leftTop" class="corner"></div>
            <div id="rightBottom" class="corner"></div>
@@ -37,9 +37,74 @@
          </div>
          <span id="rightArrow" class="arrow"></span>
          <span id="leftArrow" class="arrow"></span>
-        </button>
+        </button> -->
+        <style>
+             /* Style the modal background */
+    .modal-background {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    
+    /* Style the modal content */
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    .modal-content img, .modal-content button{
+      margin-left: 85px;
+    }
+        </style>
+        <button class="openbtn" type="submit" name="submit">Modifier</button>
+
+  <!-- The modal -->
+  <div class="modal-background">
+    <div class="modal-content">
+      <img src="edit.png" width="50" height="50">
+      <p>Apprenant modifier avec success</p>
+      <button class="closebtn">OK</button>
+    </div>
+  </div>
         
         
+        <script>
+            let modalBG = document.querySelector('.modal-background');
+
+let modalContent = document.querySelector('.modal-content');
+
+let closemodal = document.querySelector('.closebtn');
+
+let openmodal = document.querySelector('.openbtn');
+
+function openModal() {
+  modalBG.style.display = 'block';
+  modalContent.style.display = 'block';
+}
+
+function closeModal() {
+  modalBG.style.display = 'none';
+  modalContent.style.display = 'none';
+}
+
+openmodal.onclick = openModal;
+closemodal.onclick = closeModal;
+        </script>
         <?php
 include('connexionbd.php');
 
@@ -62,8 +127,8 @@ if(isset($_POST['edit'])){
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            $alert = 'Apprenant modifié avec succès';
-            echo $alert;
+            // $alert = 'Apprenant modifié avec succès';
+            // echo $alert;
         }
         else {
             $alert = 'Aucune modification effectuée';
@@ -87,13 +152,6 @@ if(isset($_POST['edit'])){
     </footer>
 </body>
 </html>
-
-<!-- 
-
-
- ?>
- -->
-
 <!-- 
   include('connexionbd.php');
 

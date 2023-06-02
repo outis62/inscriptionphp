@@ -1,12 +1,10 @@
 <?php
-// Connexion à la base de données
+
 $servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'simploninscription';
-$options = array(
-    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-);
+$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',);
 
 //On essaie de se connecter
 try{
