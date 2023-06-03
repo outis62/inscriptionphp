@@ -70,7 +70,7 @@
    echo "</div>";
   ?>
   <?php
-    echo '<a href="../index.php" class="text-decoration-none rounded bg-transparent p-2 text-dark ms-5 position-sticky bottom-0 fs-4"><i class="fa-solid fa-house"></i>Home</a>'
+    echo '<a href="inscription.php" class="text-decoration-none rounded bg-transparent p-2 text-dark ms-5 position-sticky bottom-0 fs-4"><i class="fa-solid fa-house"></i>Inscription</a>'
   ?>
  <footer class="bg-light p-5">
     <?php
